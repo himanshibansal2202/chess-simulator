@@ -2,6 +2,8 @@
 
 Simulates moves of King, Queen, and Pawn on an 8x8 chessboard.
 
+Using Node.js v18 or later.
+
 ## Usage
 
 ```
@@ -19,6 +21,12 @@ npm test
 
 - `src/`: Source code
 - `test/`: Unit tests (write with Jest)
+
+## Code Formating
+
+```
+npm run format
+```
 
 ## Assumptions
 

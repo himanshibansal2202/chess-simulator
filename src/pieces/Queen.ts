@@ -1,8 +1,9 @@
-import { ChessPiece } from './ChessPiece.js';
-import { nextMove, directions } from '../utils/board.js';
+import { ChessPiece } from './ChessPiece';
+import { nextMove, directions, validateCell } from '../utils/board';
 
 export class Queen implements ChessPiece {
   getMoves(pos: string): string[] {
+    validateCell(pos);
     const moves: string[] = [];
     for (const [dx, dy] of [
       ...directions.vertical,

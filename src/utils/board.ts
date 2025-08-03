@@ -1,7 +1,14 @@
-export const isValidCell = (cell: string): boolean => {
+export const validateCell = (cell: string): boolean => {
   const row = cell[0];
   const column = Number(cell[1]);
-  return /^[A-H]$/.test(row) && column >= 1 && column <= 8;
+
+  const valid = /^[A-H]$/.test(row) && column >= 1 && column <= 8;
+
+  if (!valid) {
+    throw new Error(`Invalid cell position: ${cell}`);
+  }
+
+  return valid;
 };
 
 export const directions = {

@@ -1,15 +1,15 @@
-import { PieceFactory } from './PieceFactory.js';
-import { isValidCell } from './utils/board.js';
+import { PieceFactory } from './PieceFactory';
+import { validateCell } from './utils/board';
 
 const [, , type, pos] = process.argv;
 
-if (!type || !pos || !isValidCell(pos.toUpperCase())) {
-  console.error('Usage: npm start -- <PieceType> <Position>');
-  console.error('Example: npm start -- King D5');
-  process.exit(1);
-}
-
 try {
+  if (!type || !pos) {
+    throw new Error(
+      'Usage: npm start -- <PieceType> <Position>\nExample: npm start -- King D5'
+    );
+  }
+  validateCell(pos.toUpperCase());
   const piece = PieceFactory.create(type);
   const moves = piece.getMoves(pos.toUpperCase());
   console.log(moves.join(', '));

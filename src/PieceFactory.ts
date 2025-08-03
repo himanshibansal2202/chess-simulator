@@ -1,7 +1,7 @@
-import { King } from './pieces/King.js';
-import { Queen } from './pieces/Queen.js';
-import { Pawn } from './pieces/Pawn.js';
-import { ChessPiece } from './pieces/ChessPiece.js';
+import { King } from './pieces/King';
+import { Queen } from './pieces/Queen';
+import { Pawn } from './pieces/Pawn';
+import { ChessPiece } from './pieces/ChessPiece';
 
 export class PieceFactory {
   static create(type: string): ChessPiece {
